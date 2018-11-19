@@ -1,4 +1,5 @@
-#pragma once
+#ifndef NURSE_H
+#define NURSE_H
 #include "caregiver.h"
 class Nurse :
 	public caregiver
@@ -6,5 +7,8 @@ class Nurse :
 public:
 	Nurse();
 	~Nurse();
+	void setTime();
+	void addPatient(patient);
 };
 
+#endif

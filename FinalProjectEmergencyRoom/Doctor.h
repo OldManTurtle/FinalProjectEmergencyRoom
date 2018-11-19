@@ -6,5 +6,7 @@ class Doctor :
 public:
 	Doctor();
 	virtual ~Doctor();
+	void setTime();
+	void addPatient(patient);
 };
 
