@@ -32,6 +32,9 @@ private:
 
 	std::vector<patient> data;
 
+	int left(int i) { return i * 2 + 1; }
+	int right(int i) { return i * 2 + 2; }
+	int up(int i) { return (i - 1) / 2; }
 };
 
 #endif

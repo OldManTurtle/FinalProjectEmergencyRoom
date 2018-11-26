@@ -28,36 +28,40 @@ void PatientQueue::nursePop()
 					 //This moves the current position to its correct spot
 	while (true) {
 		//Check to move up
-		if (data[loc] > data[(loc - 1) / 2]) {
-			swap(loc, (loc - 1) / 2);
-			loc = (loc - 1) / 2;
+		if (data[loc] > data[up(loc)]) {
+			swap(loc, up(loc));
+			loc = up(loc);
 		}
 		//This is wrong
 		else { //Then it must move down or nothing
-			if (loc * 2 + 2 >= data.size()) { //Check to make sure that down right is in range
-				if (loc * 2 + 1 >= data.size()) //If not, see if down left is in range
+			if (right(loc) >= data.size()) { //Check to make sure that down right is in range
+				if (left(loc) >= data.size()) //If not, see if down left is in range
 					return;
-			}
-			else {
-				if (data[loc] > data[loc * 2 + 1]) //switch with down left if need be
-					swap(loc, loc * 2 + 1);
-				return;
-			}
-
-			//check if the data should move down to the left
-			if ((data[loc] > data[loc * 2 + 1]) && (data[loc * 2 + 1] > data[loc * 2 + 2])) {
-				swap(loc, loc * 2 + 1);
-				loc = loc * 2 + 1;
+				else {
+					if (data[left(loc)] > data[loc]) //switch with down left if need be
+						swap(loc, left(loc));
+					return;
+				}
 			}
 
-			// down to the right?
-			else if ((data[loc] > data[loc * 2 + 2])) {
-				swap(loc, loc * 2 + 2);
-				loc = loc * 2 + 2;
+		
+			if ((data[left(loc)] > data[right(loc)])) {
+				if (data[left(loc)] > data[loc]) {
+					swap(loc, left(loc));
+					loc = left(loc);
+				}
+				else {
+					return;
+				}
 			}
-			//If we get here, it can't move up or down, so it ends
 			else {
-				return;
+				if (data[right(loc)] > data[loc]) {
+					swap(loc, right(loc));
+					loc = right(loc);
+				}
+				else {
+					return;
+				}
 			}
 		}
 	}

@@ -23,7 +23,6 @@ patient::patient(int sev_, std::string name_)
 	severity = sev_;
 }
 
-
 patient::~patient()
 {
 }
