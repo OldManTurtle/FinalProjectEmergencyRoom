@@ -154,6 +154,9 @@
     <ClInclude Include="PatientQueue.h" />
     <ClInclude Include="Record.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Names.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
