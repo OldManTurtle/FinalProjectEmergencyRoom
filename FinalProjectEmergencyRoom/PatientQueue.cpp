@@ -24,7 +24,8 @@ void PatientQueue::nursePop()
 		return;
 	swap(loc, data.size() - 1); //place the one to be deleted at the end and the end at the current position
 	data.pop_back(); // delete the end
-
+	if (loc >= data.size()) //return if the thing removed was the last item
+		return;
 					 //This moves the current position to its correct spot
 	while (true) {
 		//Check to move up
@@ -84,7 +85,6 @@ void PatientQueue::push(patient input)
 PatientQueue::PatientQueue()
 {
 }
-
 
 PatientQueue::~PatientQueue()
 {

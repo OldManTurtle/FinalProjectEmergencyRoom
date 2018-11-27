@@ -7,7 +7,9 @@ class Nurse :
 public:
 	Nurse();
 	~Nurse();
-	void setTime();
+	void setTime(int time) {
+		timeRemaining = time;
+	}
 	void addPatient(patient);
 };
 

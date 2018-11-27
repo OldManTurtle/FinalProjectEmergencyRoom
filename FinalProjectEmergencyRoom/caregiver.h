@@ -4,13 +4,15 @@
 class caregiver
 {
 public:
-	caregiver();
-	virtual ~caregiver();
+	caregiver() {}
+	virtual ~caregiver() {}
 	virtual void addPatient(PatientQueue) = 0;
-	bool hasPatient();
-	virtual void setTime() = 0;
+	virtual bool hasPatient() {
+		return true;
+	}
+	virtual void setTime(int time) = 0;
 	void operator--() { timeRemaining--; }
-private:
+protected:
 	patient currentPatient;
 	int timeRemaining;
 };
