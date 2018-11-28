@@ -20,6 +20,8 @@ public:
 
 	void display() { display(0, 0); }
 
+	bool hasName(std::string); //Check if name is in the queue
+
 	PatientQueue();
 	~PatientQueue();
 private:

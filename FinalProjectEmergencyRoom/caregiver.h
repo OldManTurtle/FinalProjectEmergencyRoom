@@ -1,6 +1,7 @@
 #ifndef CAREGIVER_H
 #define CAREGIVER_H
 #include "PatientQueue.h"
+//This and children are not done
 class caregiver
 {
 public:

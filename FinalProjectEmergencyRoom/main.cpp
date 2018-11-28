@@ -25,6 +25,7 @@ int main() {
 	h.nursePop();
 	h.nursePop();
 	h.nursePop();
+	h.nurseTop();
 	h.display();
 
 
