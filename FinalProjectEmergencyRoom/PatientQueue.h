@@ -25,6 +25,7 @@ public:
 	PatientQueue();
 	~PatientQueue();
 private:
+	void pop(int);
 
 	void display(int lvl, int loc);
 

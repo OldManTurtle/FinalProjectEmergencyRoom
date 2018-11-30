@@ -5,6 +5,8 @@
 #include "Record.h"
 #include <vector>
 #include <iostream>
+#include <random>
+#include <ctime>
 
 class PatientQueue;
 
@@ -15,6 +17,7 @@ public:
 	patient(const patient&);
 	patient(int);
 	patient(int, std::string);
+
 	~patient();
 
 	bool operator>(patient i) { return this->severity > i.severity; }
@@ -23,6 +26,8 @@ public:
 	int getSeverity() { return severity; }
 
 	static void initNames();
+
+	std::string getName() { return name; }
 private:
 	std::string getRandName();
 	std::string name;

@@ -11,6 +11,8 @@ patient::patient() //This should be random?
 
 patient::patient(const patient & input)
 {
+	this->name = input.name;
+	this->severity = input.severity;
 	namesInUse.push_back(input.name);
 }
 
@@ -51,11 +53,21 @@ void patient::initNames()
 	while (std::getline(myFile, line)) {
 		nameList.push_back(line);
 	}
+	std::srand(std::time(NULL));
 }
 
 std::string patient::getRandName()
 {
-	
-	return std::string();
+	std::string name = nameList[rand() % nameList.size()];
+	for (int i = 0; i < namesInUse.size(); i++) {
+		if (namesInUse[i] == name)
+			return getRandName();
+	}
+
+	return name;
 }
+
+std::vector<std::string> patient::namesInUse = {};
+
+std::vector<std::string> patient::nameList = {};
 

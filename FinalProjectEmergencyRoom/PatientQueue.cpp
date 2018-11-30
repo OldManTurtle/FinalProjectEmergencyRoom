@@ -17,16 +17,55 @@ patient PatientQueue::nurseTop()
 
 }
 
+void PatientQueue::docPop()
+{
+	this->pop(0);
+}
+
 void PatientQueue::nursePop()
 {
-	int loc = nurseLoc(); //loc is the current position
+	this->pop(this->nurseLoc());
+}
+
+void PatientQueue::push(patient input)
+{
+	data.push_back(input);
+
+	int loc = data.size() - 1; //loc is the current location
+
+	while (data[loc] > data[(loc - 1) / 2]) {
+		swap(loc, (loc - 1) / 2);
+		loc = (loc - 1) / 2;
+	}
+}
+
+bool PatientQueue::hasName(std::string name)
+{
+	for (int i = 0; i < data.size(); i++) {
+		if (data[i].getName() == name)
+			return true;
+	}
+	return false;
+}
+
+PatientQueue::PatientQueue()
+{
+}
+
+PatientQueue::~PatientQueue()
+{
+}
+
+void PatientQueue::pop(int loc)
+{
+	//loc is the current position
 	if (loc < 0)
 		return;
 	swap(loc, data.size() - 1); //place the one to be deleted at the end and the end at the current position
 	data.pop_back(); // delete the end
 	if (loc >= data.size()) //return if the thing removed was the last item
 		return;
-					 //This moves the current position to its correct spot
+	//This moves the current position to its correct spot
 	while (true) {
 		//Check to move up
 		if (data[loc] > data[up(loc)]) {
@@ -45,7 +84,7 @@ void PatientQueue::nursePop()
 				}
 			}
 
-		
+
 			if ((data[left(loc)] > data[right(loc)])) {
 				if (data[left(loc)] > data[loc]) {
 					swap(loc, left(loc));
@@ -66,28 +105,6 @@ void PatientQueue::nursePop()
 			}
 		}
 	}
-
-
-}
-
-void PatientQueue::push(patient input)
-{
-	data.push_back(input);
-
-	int loc = data.size() - 1; //loc is the current location
-
-	while (data[loc] > data[(loc - 1) / 2]) {
-		swap(loc, (loc - 1) / 2);
-		loc = (loc - 1) / 2;
-	}
-}
-
-PatientQueue::PatientQueue()
-{
-}
-
-PatientQueue::~PatientQueue()
-{
 }
 
 void PatientQueue::display(int lvl, int loc)
@@ -95,7 +112,7 @@ void PatientQueue::display(int lvl, int loc)
 	for (int i = 0; i < lvl; i++) {
 		std::cout << "-";
 	}
-	std::cout << data[loc].getSeverity() << std::endl;
+	std::cout << data[loc].getName() << ">>" << data[loc].getSeverity() << std::endl;
 
 
 	if (loc * 2 + 1 < data.size())

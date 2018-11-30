@@ -6,6 +6,7 @@
 int main() {
 	//fileio here
 	//for loop 7x24x60 random chance to add someone to queue
+	patient::initNames();
 
 	PatientQueue h;
 	h.push(patient(3));
@@ -26,6 +27,9 @@ int main() {
 	h.nursePop();
 	h.nursePop();
 	h.nurseTop();
+	h.display();
+
+	h.docPop();
 	h.display();
 
 
