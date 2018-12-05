@@ -1,0 +1,6 @@
+Comment Literally everything...
+Implement Record
+Implement in Main
+
+File I/O for record
+==Bugs==

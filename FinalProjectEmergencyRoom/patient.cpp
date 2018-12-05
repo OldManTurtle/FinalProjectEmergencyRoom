@@ -16,7 +16,7 @@ patient::patient(const patient & input)
 	namesInUse.push_back(input.name);
 }
 
-patient::patient(int sev)
+patient::patient(int sev, int arrival):arrivalTime(arrival)
 {
 	severity = sev;
 	if (sev == -1)
@@ -27,7 +27,7 @@ patient::patient(int sev)
 	namesInUse.push_back(name);
 }
 
-patient::patient(int sev_, std::string name_)
+patient::patient(int sev_, std::string name_, int arrival):arrivalTime(arrival)
 {
 	name = name_;
 	severity = sev_;

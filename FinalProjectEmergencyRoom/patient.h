@@ -15,8 +15,8 @@ class patient
 public:
 	patient();
 	patient(const patient&);
-	patient(int);
-	patient(int, std::string);
+	patient(int, int);
+	patient(int, std::string, int);
 
 	~patient();
 
@@ -30,11 +30,15 @@ public:
 	std::string getName() { return name; }
 private:
 	std::string getRandName();
+
+
 	std::string name;
 	int severity;
 
 	static std::vector<std::string> namesInUse;
 	static std::vector<std::string> nameList;
+
+	int arrivalTime;
 };
 
 #endif

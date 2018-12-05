@@ -58,5 +58,8 @@
     <Text Include="Names.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="todo.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

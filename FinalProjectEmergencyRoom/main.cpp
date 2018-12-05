@@ -8,29 +8,17 @@ int main() {
 	//for loop 7x24x60 random chance to add someone to queue
 	patient::initNames();
 
-	PatientQueue h;
-	h.push(patient(3));
-	h.push(patient(10));
-	h.push(patient(13));
-	h.push(patient(3));
-	h.push(patient(10));
-	h.push(patient(13));
-	h.push(patient(20));
-	h.display();
-	system("pause");
-	h.nursePop();
-	h.display();
-	system("pause");
-	h.nursePop();
-	h.nursePop();
-	h.nursePop();
-	h.nursePop();
-	h.nursePop();
-	h.nurseTop();
-	h.display();
+	Record r;
+	r.addName("chris", 20);
+	r.addName("chris", 1);
+	r.addName("Aiden", 5);
+	r.addName("Abby", 16);
+	r.addName("Bell", 6);
+	
+	r.display();
+	
 
-	h.docPop();
-	h.display();
+	
 
 
 }
