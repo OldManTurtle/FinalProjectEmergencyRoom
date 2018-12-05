@@ -4,8 +4,8 @@
 
 patient::patient() //This should be random?
 {
-	severity = -1;
-	name = "";
+	severity = rand() % 20 + 1;
+	name = getRandName();
 	namesInUse.push_back(name);
 }
 
