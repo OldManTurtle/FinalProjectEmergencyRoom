@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Doctor.cpp" />
+    <ClCompile Include="EmergencyRoom.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Nurse.cpp" />
     <ClCompile Include="patient.cpp" />
@@ -149,6 +150,7 @@
   <ItemGroup>
     <ClInclude Include="caregiver.h" />
     <ClInclude Include="Doctor.h" />
+    <ClInclude Include="EmergencyRoom.h" />
     <ClInclude Include="Nurse.h" />
     <ClInclude Include="patient.h" />
     <ClInclude Include="PatientQueue.h" />

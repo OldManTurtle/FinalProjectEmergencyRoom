@@ -1,5 +1,6 @@
 Comment Literally everything...
-Implement Record
+Finish doctors and nurses
+Implement ER stuff
 Implement in Main
 
 File I/O for record

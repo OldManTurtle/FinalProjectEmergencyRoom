@@ -15,9 +15,9 @@ private:
 	std::vector<caregiver*> healers;
 
 	std::vector<int> patientWaitTimes;
-	int currentTick;
 	int endTick;
 
+	int minutesPerPatient;
 };
 
 #endif
