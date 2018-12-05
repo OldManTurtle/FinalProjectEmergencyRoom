@@ -10,7 +10,7 @@ public:
 	void setTime(int time) {
 		timeRemaining = time;
 	}
-	void addPatient(patient);
+	void addPatient(PatientQueue, Record);
 };
 
 #endif
