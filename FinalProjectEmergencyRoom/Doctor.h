@@ -1,7 +1,9 @@
-#pragma once
+#ifndef DOCTOR_H
+#define DOCTOR_H
+
+
 #include "caregiver.h"
-class Doctor :
-	public caregiver
+class Doctor : public caregiver
 {
 public:
 	Doctor();
@@ -9,6 +11,7 @@ public:
 	void setTime(int time){
 		timeRemaining = time;
 	}
-	void addPatient(patient);
+	void addPatient(PatientQueue, Record&);
 };
 
+#endif // !DOCTOR_H
