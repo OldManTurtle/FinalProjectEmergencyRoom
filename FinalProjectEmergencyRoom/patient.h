@@ -15,6 +15,7 @@ class patient
 public:
 	patient();
 	patient(const patient&);
+	patient(int);
 	patient(int, int);
 	patient(int, std::string, int);
 
@@ -28,6 +29,8 @@ public:
 	static void initNames();
 
 	std::string getName() { return name; }
+
+	int getArrivalTime() { return arrivalTime; }
 private:
 	std::string getRandName();
 

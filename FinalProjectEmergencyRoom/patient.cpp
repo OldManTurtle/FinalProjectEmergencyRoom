@@ -16,6 +16,10 @@ patient::patient(const patient & input)
 	namesInUse.push_back(input.name);
 }
 
+patient::patient(int arrival):arrivalTime(arrival)
+{
+}
+
 patient::patient(int sev, int arrival):arrivalTime(arrival)
 {
 	severity = sev;
