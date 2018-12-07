@@ -8,7 +8,7 @@ public:
 	Nurse();
 	~Nurse();
 
-	void addPatient(PatientQueue, Record);
+	void addPatient(PatientQueue, Record&);
 };
 
 #endif

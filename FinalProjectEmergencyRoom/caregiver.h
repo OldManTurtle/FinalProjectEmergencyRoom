@@ -7,7 +7,7 @@ class caregiver
 public:
 	caregiver() {}
 	virtual ~caregiver() {}
-	virtual void addPatient(PatientQueue, Record) = 0;
+	virtual void addPatient(PatientQueue, Record&) = 0;
 	virtual bool hasPatient() { return timeRemaining > 0; }
 	virtual patient& getPatient() { return currentPatient; }
 

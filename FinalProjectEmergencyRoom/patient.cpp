@@ -18,6 +18,19 @@ patient::patient(const patient & input)
 
 patient::patient(int arrival):arrivalTime(arrival)
 {
+	int sev = rand() % 10;
+	if (sev < 7) {
+		sev = rand() % 10 + 1;
+	}
+	else if (sev < 9) {
+		sev = rand() % 5 + 11;
+	}
+	else {
+		sev = rand() % 5 + 16;
+	}
+
+	severity = sev;
+	name = getRandName();
 }
 
 patient::patient(int sev, int arrival):arrivalTime(arrival)

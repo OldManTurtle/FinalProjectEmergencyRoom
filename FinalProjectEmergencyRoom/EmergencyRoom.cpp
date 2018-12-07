@@ -11,8 +11,8 @@ void EmergencyRoom::run(int numTicks)
 			--healers[i];
 
 			if (!(healers.at(i)->hasPatient())) {
-				patientWaitTimes.push_back(currentTick-healers[i]->getPatient().getArrivalTime());
-				healers[i]->addPatient(queue);
+				patientWaitTimes.push_back(currentTick - healers[i]->getPatient().getArrivalTime());
+				healers[i]->addPatient(queue, record);
 			}
 		}
 	}
