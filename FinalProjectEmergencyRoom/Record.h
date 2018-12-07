@@ -5,6 +5,7 @@
 #include <vector>
 #include <iostream>
 #include "patient.h"
+
 //This records who is being treated and who has been treated already
 class Record
 {
@@ -12,7 +13,7 @@ public:
 	Record() {}
 	~Record() {}
 
-	void addName(patient input) { addName(input.getName(), input.getSeverity()); }
+	void addName(Patient input) { addName(input.getName(), input.getSeverity()); }
 
 	void addName(std::string, int severity);
 

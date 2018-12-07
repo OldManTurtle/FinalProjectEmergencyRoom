@@ -2,11 +2,11 @@
 
 void EmergencyRoom::run(int numTicks)
 {
-	patient::initNames();
+	Patient::initNames();
 
 	for (int currentTick = 0; currentTick < numTicks; currentTick++) {
 		if (currentTick % minutesPerPatient)
-			queue.push(patient(currentTick));	
+			queue.push(Patient(currentTick));	
 		for (int i = 0; i < healers.size(); i++) {
 			--healers[i];
 

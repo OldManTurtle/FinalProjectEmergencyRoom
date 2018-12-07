@@ -8,15 +8,15 @@
 
 class PatientQueue {
 public:
-	patient docTop();
+	Patient docTop();
 
-	patient nurseTop();
+	Patient nurseTop();
 
 	void docPop();
 
 	void nursePop();
 
-	void push(patient input);
+	void push(Patient input);
 
 	void display() { display(0, 0); }
 
@@ -33,7 +33,7 @@ private:
 
 	void swap(int locA, int locB);
 
-	std::vector<patient> data;
+	std::vector<Patient> data;
 
 	int left(int i) { return i * 2 + 1; }
 	int right(int i) { return i * 2 + 2; }

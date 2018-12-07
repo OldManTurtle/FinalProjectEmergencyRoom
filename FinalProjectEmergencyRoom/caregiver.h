@@ -1,6 +1,7 @@
 #ifndef CAREGIVER_H
 #define CAREGIVER_H
 #include "PatientQueue.h"
+#include "Record.h"
 
 class caregiver
 {
@@ -9,11 +10,11 @@ public:
 	virtual ~caregiver() {}
 	virtual void addPatient(PatientQueue, Record&) = 0;
 	virtual bool hasPatient() { return timeRemaining > 0; }
-	virtual patient& getPatient() { return currentPatient; }
+	virtual Patient& getPatient() { return currentPatient; }
 
 	void operator--() { timeRemaining--; }
 protected:
-	patient currentPatient;
+	Patient currentPatient;
 	int timeRemaining;
 };
 #endif

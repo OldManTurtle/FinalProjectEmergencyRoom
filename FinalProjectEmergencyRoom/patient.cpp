@@ -2,21 +2,21 @@
 
 
 
-patient::patient() //This should be random?
+Patient::Patient() //This should be random?
 {
 	severity = rand() % 20 + 1;
 	name = getRandName();
 	namesInUse.push_back(name);
 }
 
-patient::patient(const patient & input)
+Patient::Patient(const Patient & input)
 {
 	this->name = input.name;
 	this->severity = input.severity;
 	namesInUse.push_back(input.name);
 }
 
-patient::patient(int arrival):arrivalTime(arrival)
+Patient::Patient(int arrival):arrivalTime(arrival)
 {
 	int sev = rand() % 10;
 	if (sev < 7) {
@@ -33,7 +33,7 @@ patient::patient(int arrival):arrivalTime(arrival)
 	name = getRandName();
 }
 
-patient::patient(int sev, int arrival):arrivalTime(arrival)
+Patient::Patient(int sev, int arrival):arrivalTime(arrival)
 {
 	severity = sev;
 	if (sev == -1)
@@ -44,14 +44,14 @@ patient::patient(int sev, int arrival):arrivalTime(arrival)
 	namesInUse.push_back(name);
 }
 
-patient::patient(int sev_, std::string name_, int arrival):arrivalTime(arrival)
+Patient::Patient(int sev_, std::string name_, int arrival):arrivalTime(arrival)
 {
 	name = name_;
 	severity = sev_;
 	namesInUse.push_back(name);
 }
 
-patient::~patient()
+Patient::~Patient()
 {
 	for (int i = 0; i < namesInUse.size(); i++) {
 		if (namesInUse[i] == name) {
@@ -62,7 +62,7 @@ patient::~patient()
 	std::cerr << "Couldn't find a name to delete" << std::endl;
 }
 
-void patient::initNames()
+void Patient::initNames()
 {
 	std::string line;
 	std::ifstream myFile;
@@ -73,7 +73,7 @@ void patient::initNames()
 	std::srand(std::time(NULL));
 }
 
-std::string patient::getRandName()
+std::string Patient::getRandName()
 {
 	std::string name = nameList[rand() % nameList.size()];
 	for (int i = 0; i < namesInUse.size(); i++) {
@@ -84,7 +84,7 @@ std::string patient::getRandName()
 	return name;
 }
 
-std::vector<std::string> patient::namesInUse = {};
+std::vector<std::string> Patient::namesInUse = {};
 
-std::vector<std::string> patient::nameList = {};
+std::vector<std::string> Patient::nameList = {};
 

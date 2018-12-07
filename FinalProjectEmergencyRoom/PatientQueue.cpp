@@ -2,17 +2,17 @@
 
 
 
-patient PatientQueue::docTop()
+Patient PatientQueue::docTop()
 {
 	if (data.size() == 0)
-		return patient(-1, -1); //We should take another look at this
+		return Patient(-1, -1); //We should take another look at this
 	return data[0];
 }
 
-patient PatientQueue::nurseTop()
+Patient PatientQueue::nurseTop()
 {
 	if (nurseLoc() < 0)
-		return patient(-1, -1); //We should take a look at this to see if it should work
+		return Patient(-1, -1); //We should take a look at this to see if it should work
 	return data[nurseLoc()];
 
 }
@@ -27,7 +27,7 @@ void PatientQueue::nursePop()
 	this->pop(this->nurseLoc());
 }
 
-void PatientQueue::push(patient input)
+void PatientQueue::push(Patient input)
 {
 	data.push_back(input);
 
@@ -152,7 +152,7 @@ void PatientQueue::swap(int locA, int locB)
 	{
 		throw(std::range_error("Invalid Range"));
 	}
-	patient temp = data[locA];
+	Patient temp = data[locA];
 	data[locA] = data[locB];
 	data[locB] = temp;
 }

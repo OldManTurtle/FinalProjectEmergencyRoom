@@ -2,27 +2,27 @@
 #define PATIENT_H
 #include <string>
 #include <fstream>
-#include "Record.h"
 #include <vector>
 #include <iostream>
 #include <random>
 #include <ctime>
 
+class Record;
 class PatientQueue;
 
-class patient
+class Patient
 {
 public:
-	patient();
-	patient(const patient&);
-	patient(int);
-	patient(int, int);
-	patient(int, std::string, int);
+	Patient();
+	Patient(const Patient&);
+	Patient(int);
+	Patient(int, int);
+	Patient(int, std::string, int);
 
-	~patient();
+	~Patient();
 
-	bool operator>(patient i) { return this->severity > i.severity; }
-	bool operator<(patient i) { return this->severity < i.severity; }
+	bool operator>(Patient i) { return this->severity > i.severity; }
+	bool operator<(Patient i) { return this->severity < i.severity; }
 
 	int getSeverity() { return severity; }
 
