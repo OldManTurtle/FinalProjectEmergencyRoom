@@ -17,8 +17,10 @@ void Nurse::addPatient(PatientQueue p, Record r)
 		std::cerr << "Error in Nurse::addPatient: Patient is -1" << std::endl;
 		return;
 	}
-	else
-		currentPatient = p.nurseTop();
+	currentPatient = p.nurseTop();
+	p.nursePop();
+
+	timeRemaining = rand() % 10 + 1;
 
 	r.addName(currentPatient);
 }
