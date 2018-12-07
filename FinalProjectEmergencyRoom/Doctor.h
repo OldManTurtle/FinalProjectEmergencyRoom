@@ -8,7 +8,7 @@ class Doctor : public caregiver
 public:
 	Doctor();
 	virtual ~Doctor();
-	void addPatient(PatientQueue, Record&);
+	void addPatient(PatientQueue&, Record&);
 };
 
 #endif // !DOCTOR_H

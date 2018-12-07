@@ -2,17 +2,20 @@
 
 void EmergencyRoom::run(int numTicks)
 {
-	Patient::initNames();
 
 	for (int currentTick = 0; currentTick < numTicks; currentTick++) {
-		if (currentTick % minutesPerPatient)
-			queue.push(Patient(currentTick));	
-		for (int i = 0; i < healers.size(); i++) {
-			--healers[i];
+		std::cout << currentTick << "-" << queue.getSize() << std::endl;
+		if (currentTick % minutesPerPatient == 0)
+			queue.push(Patient(currentTick));
 
-			if (!(healers.at(i)->hasPatient())) {
-				patientWaitTimes.push_back(currentTick - healers[i]->getPatient().getArrivalTime());
-				healers[i]->addPatient(queue, record);
+		for (int i = 0; i < healers.size(); i++) {
+			healers[i]->decTime();
+
+			if (queue.docTop().getSeverity() != -1) {
+				if (!(healers.at(i)->hasPatient())) {
+					patientWaitTimes.push_back(currentTick - healers[i]->getPatient().getArrivalTime());
+					healers[i]->addPatient(queue, record);
+				}
 			}
 		}
 	}
@@ -40,7 +43,7 @@ void EmergencyRoom::run(int numTicks)
 
 }
 
-EmergencyRoom::EmergencyRoom(int numDoc, int numNurse)
+EmergencyRoom::EmergencyRoom(int numDoc, int numNurse, int rate):minutesPerPatient(rate)
 {
 	for (int i = 0; i < numDoc; i++)
 		healers.push_back(new Doctor);

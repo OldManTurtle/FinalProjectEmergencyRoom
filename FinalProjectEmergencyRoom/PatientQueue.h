@@ -22,6 +22,7 @@ public:
 
 	bool hasName(std::string); //Check if name is in the queue
 
+	int getSize() { return data.size(); }
 	PatientQueue();
 	~PatientQueue();
 private:

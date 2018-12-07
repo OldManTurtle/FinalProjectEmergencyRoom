@@ -7,7 +7,7 @@
 class EmergencyRoom {
 public:
 	void run(int numTicks);
-	EmergencyRoom(int numDoc, int numNurse);
+	EmergencyRoom(int numDoc, int numNurse, int rate);
 private:
 	Record record;
 	PatientQueue queue;
