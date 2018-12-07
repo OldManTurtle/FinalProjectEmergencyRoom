@@ -1,9 +1,6 @@
 #include<iostream>
 
-#include "Doctor.h"
-#include "Nurse.h"
-#include "Record.h"
-#include "PatientQueue.h"
+#include "EmergencyRoom.h"
 
 int main() {
 	//fileio here

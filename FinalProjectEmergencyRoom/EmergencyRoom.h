@@ -1,9 +1,8 @@
 #ifndef EMERGENCYROOM_H
 #define EMERGENCYROOM_H
-#include "PatientQueue.h"
+
 #include "Doctor.h"
 #include "Nurse.h"
-#include "Record.h"
 
 class EmergencyRoom {
 public:
