@@ -20,10 +20,10 @@ Nurse::~Nurse()
 
 void Nurse::addPatient(PatientQueue& p, Record& r)
 {
+	currentPatient = p.nurseTop();
 	if (p.nurseTop().getSeverity() == -1) {
 		return;
 	}
-	currentPatient = p.nurseTop();
 	p.nursePop();
 
 	timeRemaining = rand() % 10 + 1;

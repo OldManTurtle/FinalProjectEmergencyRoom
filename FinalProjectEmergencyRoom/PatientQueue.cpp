@@ -55,6 +55,18 @@ bool PatientQueue::hasName(std::string name)
 	return false;
 }
 
+void PatientQueue::uptickWait(int currentTick)
+{
+	for (int i = 0; i < data.size(); i++) {
+		if ((data[i].getSeverity() < 20) && ((currentTick - data[i].getArrivalTime()) % 30 == 0)) {//Every half hour, severity increases by one
+			data[i].iterateSeverity();
+			Patient temp = data[i];
+			reorganize(i);
+		}
+
+	}
+}
+
 PatientQueue::PatientQueue()
 {
 }
@@ -73,6 +85,10 @@ void PatientQueue::pop(int loc)
 	if (loc >= data.size()) //return if the thing removed was the last item
 		return;
 	//This moves the current position to its correct spot
+	reorganize(loc);
+}
+
+void PatientQueue::reorganize(int loc) {
 	while (true) {
 		//Check to move up
 		if (data[loc] > data[up(loc)]) {

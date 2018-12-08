@@ -38,6 +38,8 @@ public:
 	std::string getName() { return name; }
 
 	int getArrivalTime() { return arrivalTime; }
+
+	void iterateSeverity() { severity++; }
 private:
 	std::string getRandName();
 

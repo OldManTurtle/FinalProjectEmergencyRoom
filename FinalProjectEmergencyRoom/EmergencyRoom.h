@@ -14,7 +14,7 @@
 class EmergencyRoom {
 public:
 	void run(unsigned int numTicks);
-	void altrun(unsigned int numTicks);
+	void simpleRun(unsigned int numTicks);
 	EmergencyRoom(int numDoc, int numNurse, int rate);
 	std::string getData();
 

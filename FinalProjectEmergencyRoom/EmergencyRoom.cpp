@@ -10,23 +10,7 @@
 void EmergencyRoom::run(unsigned int numTicks)
 {
 
-	for (unsigned int currentTick = 0; currentTick < numTicks; currentTick++) {
-		std::cout << currentTick << "-" << queue.getSize() << std::endl;
-		if (rand() % minutesPerPatient == 0)
-			queue.push(Patient(currentTick));
-
-		for (int i = 0; i < healers.size(); i++) {
-			healers[i]->decTime();
-
-			if (queue.docTop().getSeverity() != -1) {
-				if (!(healers.at(i)->hasPatient())) {
-					healers[i]->addPatient(queue, record);
-					if(healers[i]->getPatient().getArrivalTime() != -1)
-						patientWaitTimes.push_back(currentTick - (healers[i]->getPatient().getArrivalTime()));
-				}
-			}
-		}
-	}
+	simpleRun(numTicks);
 
 	while (true) {
 		std::cout << "Would you like to see the [r]ecord or a [s]pecific patient by name or [e]xit? ";
@@ -62,23 +46,23 @@ void EmergencyRoom::run(unsigned int numTicks)
 
 }
 
-void EmergencyRoom::altrun(unsigned int numTicks)
+void EmergencyRoom::simpleRun(unsigned int numTicks)
 {
-
+	
 	for (unsigned int currentTick = 0; currentTick < numTicks; currentTick++) {
+		queue.uptickWait(currentTick);
 		std::cout << currentTick << "-" << queue.getSize() << std::endl;
+		queue.display();
 		if (rand() % minutesPerPatient == 0)
 			queue.push(Patient(currentTick));
 
 		for (int i = 0; i < healers.size(); i++) {
 			healers[i]->decTime();
 
-			if (queue.docTop().getSeverity() != -1) {
-				if (!(healers.at(i)->hasPatient())) {
-					healers[i]->addPatient(queue, record);
-					if (healers[i]->getPatient().getArrivalTime() != -1)
-						patientWaitTimes.push_back(currentTick - (healers[i]->getPatient().getArrivalTime()));
-				}
+			if (!(healers.at(i)->hasPatient())) {
+				healers[i]->addPatient(queue, record);
+				if (healers[i]->getPatient().getArrivalTime() != -1)
+					patientWaitTimes.push_back(currentTick - (healers[i]->getPatient().getArrivalTime()));
 			}
 		}
 	}
