@@ -5,7 +5,7 @@ void EmergencyRoom::run(int numTicks)
 
 	for (int currentTick = 0; currentTick < numTicks; currentTick++) {
 		std::cout << currentTick << "-" << queue.getSize() << std::endl;
-		if (currentTick % minutesPerPatient == 0)
+		if (rand() % minutesPerPatient == 0)
 			queue.push(Patient(currentTick));
 
 		for (int i = 0; i < healers.size(); i++) {
@@ -13,8 +13,9 @@ void EmergencyRoom::run(int numTicks)
 
 			if (queue.docTop().getSeverity() != -1) {
 				if (!(healers.at(i)->hasPatient())) {
-					patientWaitTimes.push_back(currentTick - healers[i]->getPatient().getArrivalTime());
 					healers[i]->addPatient(queue, record);
+					if(healers[i]->getPatient().getArrivalTime() != -1)
+						patientWaitTimes.push_back(currentTick - (healers[i]->getPatient().getArrivalTime()));
 				}
 			}
 		}
@@ -24,14 +25,21 @@ void EmergencyRoom::run(int numTicks)
 		std::cout << "Would you like to see the [r]ecord or a [s]pecific patient by name or [e]xit? ";
 		std::string response;
 		std::cin >> response;
+		double sum = 0;
 		switch (response[0]) {
 		case 'r':
 			record.display();
+			std::cout << "Average Wait Time: ";
+			for (int i = 0; i < patientWaitTimes.size(); i++) {
+				sum += patientWaitTimes[i];
+			}
+			sum = sum / patientWaitTimes.size();
+			std::cout << sum << std::endl;
 			break;
 		case 's':
 			std::cout << "What name? ";
 			std::cin >> response;
-			record.getNumVisits(response);
+			std::cout << record.getNumVisits(response) << std::endl;
 			break;
 		case 'e':
 			return;

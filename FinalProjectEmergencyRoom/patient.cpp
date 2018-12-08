@@ -2,18 +2,19 @@
 
 
 
-Patient::Patient() //This should be random?
+Patient::Patient() //This should be null
 {
-	severity = rand() % 20 + 1;
-	name = getRandName();
-	namesInUse.push_back(name);
+	severity = -1;
+	name = "";
+	arrivalTime = -1;
 }
 
 Patient::Patient(const Patient & input)
 {
 	this->name = input.name;
 	this->severity = input.severity;
-	namesInUse.push_back(input.name);
+	this->arrivalTime = input.arrivalTime;
+	namesInUse.push_back(this->name);
 }
 
 Patient::Patient(int arrival):arrivalTime(arrival)
@@ -31,6 +32,7 @@ Patient::Patient(int arrival):arrivalTime(arrival)
 
 	severity = sev;
 	name = getRandName();
+	namesInUse.push_back(this->name);
 }
 
 Patient::Patient(int sev, int arrival):arrivalTime(arrival)
@@ -41,14 +43,14 @@ Patient::Patient(int sev, int arrival):arrivalTime(arrival)
 	else {
 		name = getRandName();
 	}
-	namesInUse.push_back(name);
+	namesInUse.push_back(this->name);
 }
 
 Patient::Patient(int sev_, std::string name_, int arrival):arrivalTime(arrival)
 {
 	name = name_;
 	severity = sev_;
-	namesInUse.push_back(name);
+	namesInUse.push_back(this->name);
 }
 
 Patient::~Patient()
