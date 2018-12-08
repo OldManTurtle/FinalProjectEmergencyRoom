@@ -1,8 +1,8 @@
 //////////////////////////////////
-//Title:
+//Title: Patient.h
 //Authors: Abby Jahns, Aiden McIlraith, Chris Roberts
 //Last Modified: 12/7/2018
-//Purpose:
+//Purpose: Define the Patient class
 //////////////////////////////////
 
 #ifndef PATIENT_H

@@ -1,8 +1,8 @@
 //////////////////////////////////
-//Title:
+//Title: PatientQueue.h
 //Authors: Abby Jahns, Aiden McIlraith, Chris Roberts
 //Last Modified: 12/7/2018
-//Purpose:
+//Purpose: Define the PatientQueue class
 //////////////////////////////////
 
 #ifndef ERHEAP_H
@@ -11,7 +11,7 @@
 #include <exception>
 #include <stdexcept>
 #include <iostream>
-#include "patient.h"
+#include "Patient.h"
 
 class PatientQueue {
 public:

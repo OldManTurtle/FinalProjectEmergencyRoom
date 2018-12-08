@@ -24,9 +24,6 @@
     <ClCompile Include="Nurse.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="patient.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="PatientQueue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -34,6 +31,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EmergencyRoom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Patient.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,9 +47,6 @@
     <ClInclude Include="Nurse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="patient.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="PatientQueue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -57,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EmergencyRoom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Patient.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

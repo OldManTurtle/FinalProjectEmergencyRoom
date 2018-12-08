@@ -1,8 +1,8 @@
 //////////////////////////////////
-//Title:
+//Title: Nurse.cpp	
 //Authors: Abby Jahns, Aiden McIlraith, Chris Roberts
 //Last Modified: 12/7/2018
-//Purpose:
+//Purpose: Implement the Nurse class
 //////////////////////////////////
 
 #include "Nurse.h"

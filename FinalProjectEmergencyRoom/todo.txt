@@ -1,7 +1,2 @@
-Comment Literally everything...
-Finish doctors and nurses
-Implement ER stuff
-Implement in Main
-
-File I/O for record
 ==Bugs==
+Long wait times cause a strangely large number in the record. IDK why.

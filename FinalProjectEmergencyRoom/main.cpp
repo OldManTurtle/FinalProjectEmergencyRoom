@@ -1,19 +1,25 @@
+//////////////////////////////////
+//Title: main
+//Authors: Abby Jahns, Aiden McIlraith, Chris Roberts
+//Last Modified: 12/7/2018
+//Purpose: Implement the er class
+//////////////////////////////////
 #include<iostream>
-
 #include "EmergencyRoom.h"
 
 int main() {
-	//fileio here
 	std::ofstream myfile;
 	myfile.open("data.txt",std::ios::out);
-	myfile << "New Log" << std::endl;
-	//for loop 7x24x60 random chance to add someone to queue
 	Patient::initNames();
+	char answer;
+	std::cout << "Run the simulation manually? [y/n]";
+	std::cin >> answer;
 
 	double rate;
+
 	int doc, nurse;
-	std::cin >> doc;
-	if (doc) {
+	
+	if (answer == 'y') {
 		std::cout << "Enter average hourly patient arrival rate, the number of Doctors working, and the number of Nurses working\n";
 
 		std::cin >> rate >> doc >> nurse;

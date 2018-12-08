@@ -1,8 +1,8 @@
 //////////////////////////////////
-//Title:
+//Title: EmergencyRoom.h
 //Authors: Abby Jahns, Aiden McIlraith, Chris Roberts
 //Last Modified: 12/7/2018
-//Purpose:
+//Purpose: Define the EmergencyRoom class
 //////////////////////////////////
 
 #ifndef EMERGENCYROOM_H

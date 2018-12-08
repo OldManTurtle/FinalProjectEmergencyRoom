@@ -1,8 +1,8 @@
 //////////////////////////////////
-//Title:
+//Title: Record.cpp
 //Authors: Abby Jahns, Aiden McIlraith, Chris Roberts
 //Last Modified: 12/7/2018
-//Purpose:
+//Purpose: Implement the Record class
 //////////////////////////////////
 
 #include "Record.h"

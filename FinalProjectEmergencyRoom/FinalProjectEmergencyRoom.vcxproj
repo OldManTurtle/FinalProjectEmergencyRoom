@@ -143,7 +143,7 @@
     <ClCompile Include="EmergencyRoom.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Nurse.cpp" />
-    <ClCompile Include="patient.cpp" />
+    <ClCompile Include="Patient.cpp" />
     <ClCompile Include="PatientQueue.cpp" />
     <ClCompile Include="Record.cpp" />
   </ItemGroup>
@@ -152,7 +152,7 @@
     <ClInclude Include="Doctor.h" />
     <ClInclude Include="EmergencyRoom.h" />
     <ClInclude Include="Nurse.h" />
-    <ClInclude Include="patient.h" />
+    <ClInclude Include="Patient.h" />
     <ClInclude Include="PatientQueue.h" />
     <ClInclude Include="Record.h" />
   </ItemGroup>

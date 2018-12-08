@@ -1,8 +1,8 @@
 //////////////////////////////////
-//Title:
+//Title: Record.h
 //Authors: Abby Jahns, Aiden McIlraith, Chris Roberts
 //Last Modified: 12/7/2018
-//Purpose:
+//Purpose: Define the Record class
 //////////////////////////////////
 
 #ifndef RECORD_H
@@ -11,7 +11,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include "patient.h"
+#include "Patient.h"
 
 //This records who is being treated and who has been treated already
 class Record
