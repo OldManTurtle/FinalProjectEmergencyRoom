@@ -157,6 +157,7 @@
     <ClInclude Include="Record.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="data.txt" />
     <Text Include="Names.txt" />
     <Text Include="todo.txt" />
   </ItemGroup>
