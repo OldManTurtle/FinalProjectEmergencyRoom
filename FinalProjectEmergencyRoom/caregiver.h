@@ -1,13 +1,21 @@
+//////////////////////////////////
+//Title:
+//Authors: Abby Jahns, Aiden McIlraith, Chris Roberts
+//Last Modified: 12/7/2018
+//Purpose:
+//////////////////////////////////
+
+
 #ifndef CAREGIVER_H
 #define CAREGIVER_H
 #include "PatientQueue.h"
 #include "Record.h"
 
-class caregiver
+class Caregiver
 {
 public:
-	caregiver() {}
-	virtual ~caregiver() {}
+	Caregiver() {}
+	virtual ~Caregiver() {}
 	virtual void addPatient(PatientQueue&, Record&) = 0;
 	virtual bool hasPatient() { return timeRemaining > 0; }
 	virtual Patient& getPatient() { return currentPatient; }
