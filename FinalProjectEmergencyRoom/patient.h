@@ -1,3 +1,10 @@
+//////////////////////////////////
+//Title:
+//Authors: Abby Jahns, Aiden McIlraith, Chris Roberts
+//Last Modified: 12/7/2018
+//Purpose:
+//////////////////////////////////
+
 #ifndef PATIENT_H
 #define PATIENT_H
 #include <string>

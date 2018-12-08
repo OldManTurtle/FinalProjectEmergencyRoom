@@ -1,3 +1,10 @@
+//////////////////////////////////
+//Title:
+//Authors: Abby Jahns, Aiden McIlraith, Chris Roberts
+//Last Modified: 12/7/2018
+//Purpose:
+//////////////////////////////////
+
 #ifndef EMERGENCYROOM_H
 #define EMERGENCYROOM_H
 
@@ -14,7 +21,7 @@ public:
 private:
 	Record record;
 	PatientQueue queue;
-	std::vector<caregiver*> healers;
+	std::vector<Caregiver*> healers;
 	
 
 	std::vector<int> patientWaitTimes;
