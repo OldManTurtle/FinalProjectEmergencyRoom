@@ -1,0 +1,4 @@
+New Log
+One doc, two nurse
+16.575275,5
+25.516503,6

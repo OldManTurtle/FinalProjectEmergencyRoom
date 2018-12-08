@@ -19,6 +19,8 @@ public:
 
 	int getNumVisits(std::string input);
 
+	int numPeople() { return data.size(); }
+
 	void display();
 
 	int getSeverityOfVisit(std::string name, int visit);
