@@ -51,8 +51,7 @@ void EmergencyRoom::simpleRun(unsigned int numTicks)
 	
 	for (unsigned int currentTick = 0; currentTick < numTicks; currentTick++) {
 		queue.uptickWait(currentTick);
-		std::cout << currentTick << "-" << queue.getSize() << std::endl;
-		queue.display();
+		std::cout << ((currentTick % 101==0) ? std::to_string(currentTick * 10 / 1008) + "%\n" : std::string(""));
 		if (rand() % minutesPerPatient == 0)
 			queue.push(Patient(currentTick));
 
@@ -66,6 +65,7 @@ void EmergencyRoom::simpleRun(unsigned int numTicks)
 			}
 		}
 	}
+	std::cout << "100% --> Done!" << std::endl;
 }
 
 EmergencyRoom::EmergencyRoom(int numDoc, int numNurse, int rate):minutesPerPatient(rate)
