@@ -8,21 +8,22 @@
 #ifndef DOCTOR_H
 #define DOCTOR_H
 
+
 #include "caregiver.h"
 
-//subclass of Caregiver
+//Subclass of Caregiver. It can treat patients of severity 1-20
+//and takes 1-20 mins to do so.
 class Doctor : public Caregiver
 {
 public:
-
-	//constructor
+	//Default constructor. Just calls Caregiver()
 	Doctor();
-
-	//destructor
 	virtual ~Doctor();
 
-	//pulls the top patient from the queue and sets it as 
-	//the doctors current patient
+	//Takes patient from the very top of the PatientQueue
+	//that gets passed in and saves it. The time remaining
+	//gets set to a random number between 1 and 20, and
+	//the patient is recorded.
 	void addPatient(PatientQueue&, Record&);
 };
 

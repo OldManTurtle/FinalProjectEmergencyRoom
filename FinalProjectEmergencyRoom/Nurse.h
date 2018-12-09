@@ -12,12 +12,15 @@ class Nurse :
 	public Caregiver
 {
 public:
+	//Just calls Caregiver()
 	Nurse();
+
+	//Does nothing
 	~Nurse();
 
-	//pulls the top patient from the queue with a 
-	//severity less than or equal to 10
-	//and sets it as the nurses  current patient
+	//This treats the patient with the highest
+	//priority under 11. See Doctor::addPatient
+	//for more information.
 	void addPatient(PatientQueue&, Record&);
 };
 

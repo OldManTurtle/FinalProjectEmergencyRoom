@@ -9,7 +9,7 @@
 
 
 
-Nurse::Nurse()
+Nurse::Nurse():Caregiver()
 {
 }
 
