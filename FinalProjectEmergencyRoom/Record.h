@@ -17,9 +17,12 @@
 class Record
 {
 public:
+	//default constructor
 	Record() {}
+	//deconstructor
 	~Record() {}
 
+	//
 	void addName(Patient input) { addName(input.getName(), input.getSeverity()); }
 
 	void addName(std::string, int severity);

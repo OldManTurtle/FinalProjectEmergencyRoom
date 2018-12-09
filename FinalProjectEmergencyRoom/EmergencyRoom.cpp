@@ -9,7 +9,7 @@
 
 void EmergencyRoom::run(unsigned int numTicks)
 {
-
+	//run simulation
 	simpleRun(numTicks);
 
 	while (true) {
@@ -28,7 +28,7 @@ void EmergencyRoom::run(unsigned int numTicks)
 			std::cout << sum << std::endl;
 
 			std::cout << "Patients left in queue: " << queue.getSize() << std::endl;
-			std::cout << "Number of Treatments: " << patientWaitTimes.size() << std::endl;
+			std::cout << "Number of total Treatments: " << patientWaitTimes.size() << std::endl;
 			std::cout << "Number of Patients Treated: " << record.numPeople() << std::endl;
 			break;
 		case 's':
@@ -51,10 +51,15 @@ void EmergencyRoom::simpleRun(unsigned int numTicks)
 	
 	for (unsigned int currentTick = 0; currentTick < numTicks; currentTick++) {
 		queue.uptickWait(currentTick);
+		
+		//calculates percent done
 		std::cout << ((currentTick % 101==0) ? std::to_string(currentTick * 10 / 1008) + "%\n" : std::string(""));
 		if (rand() % minutesPerPatient == 0)
 			queue.push(Patient(currentTick));
 
+
+		//adds a patient if a healer doesn't have one
+		//and pushes that patient's arrival time
 		for (int i = 0; i < healers.size(); i++) {
 			healers[i]->decTime();
 

@@ -15,6 +15,9 @@ public:
 	Nurse();
 	~Nurse();
 
+	//pulls the top patient from the queue with a 
+	//severity less than or equal to 10
+	//and sets it as the nurses  current patient
 	void addPatient(PatientQueue&, Record&);
 };
 

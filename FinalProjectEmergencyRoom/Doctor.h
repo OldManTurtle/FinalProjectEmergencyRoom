@@ -8,13 +8,21 @@
 #ifndef DOCTOR_H
 #define DOCTOR_H
 
-
 #include "caregiver.h"
+
+//subclass of Caregiver
 class Doctor : public Caregiver
 {
 public:
+
+	//constructor
 	Doctor();
+
+	//destructor
 	virtual ~Doctor();
+
+	//pulls the top patient from the queue and sets it as 
+	//the doctors current patient
 	void addPatient(PatientQueue&, Record&);
 };
 
