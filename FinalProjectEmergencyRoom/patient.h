@@ -42,7 +42,10 @@ public:
 	int getSeverity() { return severity; }
 	std::string getName() { return name; }
 	int getArrivalTime() { return arrivalTime; }
+	static int getDeaths() { return deadList.size(); }
+	static void showDeaths();
 
+	static void kill(std::string);
 	//This retrieves the names from the file and stores them in the master list
 	static void initNames();
 	
@@ -61,6 +64,7 @@ private:
 	//Vectors of names used to prevent duplicates
 	static std::vector<std::string> namesInUse;
 	static std::vector<std::string> nameList;
+	static std::vector<std::string> deadList; //Stores the names of the people who died
 
 	
 };

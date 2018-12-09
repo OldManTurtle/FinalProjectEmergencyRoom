@@ -54,8 +54,29 @@ Patient::~Patient()
 	std::cerr << "Couldn't find a name to delete" << std::endl;
 }
 
+void Patient::showDeaths()
+{
+	for (int i = 0; i < deadList.size(); i++)
+	{
+		std::cout << deadList[i] << std::endl;
+	}
+}
+
+void Patient::kill(std::string input)
+{
+	for (int i = 0; i < nameList.size(); i++) {
+		if (input == nameList[i]) {
+			nameList.erase(nameList.begin() + i);
+			break;
+		}
+	}
+	deadList.push_back(input);
+}
+
 void Patient::initNames()
 {
+	deadList.clear();
+	nameList.clear();
 	std::string line;
 	std::ifstream myFile;
 	myFile.open("Names.txt", std::ios::in);
@@ -80,3 +101,4 @@ std::vector<std::string> Patient::namesInUse = {};
 
 std::vector<std::string> Patient::nameList = {};
 
+std::vector<std::string> Patient::deadList = {};

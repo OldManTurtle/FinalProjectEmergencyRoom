@@ -30,6 +30,9 @@ void EmergencyRoom::run(unsigned int numTicks)
 			std::cout << "Patients left in queue: " << queue.getSize() << std::endl;
 			std::cout << "Number of total Treatments: " << patientWaitTimes.size() << std::endl;
 			std::cout << "Number of Patients Treated: " << record.numPeople() << std::endl;
+			std::cout << "Number of Deaths: " << Patient::getDeaths() << std::endl;
+			std::cout << "People who died:" << std::endl;
+			Patient::showDeaths();
 			break;
 		case 's':
 			std::cout << "What name? ";
@@ -48,6 +51,7 @@ void EmergencyRoom::run(unsigned int numTicks)
 
 void EmergencyRoom::simpleRun(unsigned int numTicks)
 {
+	Patient::initNames();
 	
 	for (unsigned int currentTick = 0; currentTick < numTicks; currentTick++) {
 		queue.uptickWait(currentTick);
@@ -91,6 +95,6 @@ std::string EmergencyRoom::getData()
 		sum += patientWaitTimes[i];
 	}
 	sum = sum / patientWaitTimes.size();
-	x = x + std::to_string(sum) + std::string(",") + std::to_string(minutesPerPatient);
+	x = x + std::to_string(sum) + std::string(",") + std::to_string(minutesPerPatient) + "," + std::to_string(Patient::getDeaths());
 	return x;
 }

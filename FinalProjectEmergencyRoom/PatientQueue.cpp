@@ -58,12 +58,18 @@ bool PatientQueue::hasName(std::string name)
 void PatientQueue::uptickWait(int currentTick)
 {
 	for (int i = 0; i < data.size(); i++) {
-		if ((data[i].getSeverity() < 20) && ((currentTick - data[i].getArrivalTime()) % 30 == 0)) {//Every half hour, severity increases by one
+		if ((data[i].getSeverity() < 20) && ((currentTick - data[i].getArrivalTime()) % 30 == 0)) {
+			//Every half hour, severity increases by one
 			data[i].iterateSeverity();
 			Patient temp = data[i];
 			reorganize(i);
 		}
+		else if ((data[i].getSeverity() >= 20) && ((currentTick - data[i].getArrivalTime()) % 30 == 0)) {
+			//If the patient is at 20, they die if they should tick up
+			Patient::kill(data[i].getName());
+			pop(i);
 
+		}
 	}
 }
 

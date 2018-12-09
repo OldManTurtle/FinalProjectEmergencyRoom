@@ -7,16 +7,9 @@
 
 #include "Nurse.h"
 
+Nurse::Nurse():Caregiver(){}
 
-
-Nurse::Nurse():Caregiver()
-{
-}
-
-
-Nurse::~Nurse()
-{
-}
+Nurse::~Nurse(){}
 
 void Nurse::addPatient(PatientQueue& p, Record& r)
 {
