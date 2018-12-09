@@ -9,7 +9,7 @@
 
 
 
-Doctor::Doctor()
+Doctor::Doctor():Caregiver()
 {
 }
 

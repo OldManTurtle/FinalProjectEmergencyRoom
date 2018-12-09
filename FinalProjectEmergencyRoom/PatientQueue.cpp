@@ -12,14 +12,14 @@
 Patient PatientQueue::docTop()
 {
 	if (data.size() == 0)
-		return Patient(-1, -1); //We should take another look at this
+		return Patient(); //We should take another look at this
 	return data[0];
 }
 
 Patient PatientQueue::nurseTop()
 {
 	if (nurseLoc() < 0)
-		return Patient(-1, -1); //We should take a look at this to see if it should work
+		return Patient(); //We should take a look at this to see if it should work
 	return data[nurseLoc()];
 
 }

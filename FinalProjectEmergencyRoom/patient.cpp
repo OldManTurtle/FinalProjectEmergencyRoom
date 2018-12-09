@@ -14,6 +14,7 @@ Patient::Patient() //This should be null
 	severity = -1;
 	name = "";
 	arrivalTime = -1;
+	namesInUse.push_back(name);
 }
 
 Patient::Patient(const Patient & input)
@@ -39,24 +40,6 @@ Patient::Patient(int arrival):arrivalTime(arrival)
 
 	severity = sev;
 	name = getRandName();
-	namesInUse.push_back(this->name);
-}
-
-Patient::Patient(int sev, int arrival):arrivalTime(arrival)
-{
-	severity = sev;
-	if (sev == -1)
-		name = "";
-	else {
-		name = getRandName();
-	}
-	namesInUse.push_back(this->name);
-}
-
-Patient::Patient(int sev_, std::string name_, int arrival):arrivalTime(arrival)
-{
-	name = name_;
-	severity = sev_;
 	namesInUse.push_back(this->name);
 }
 
