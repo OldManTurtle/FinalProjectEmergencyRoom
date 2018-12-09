@@ -161,6 +161,9 @@
     <Text Include="Names.txt" />
     <Text Include="todo.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="FinalProjectMathematica.nb" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

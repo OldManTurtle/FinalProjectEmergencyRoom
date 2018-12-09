@@ -71,4 +71,9 @@
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="FinalProjectMathematica.nb">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>

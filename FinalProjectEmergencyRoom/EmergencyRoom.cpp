@@ -95,6 +95,6 @@ std::string EmergencyRoom::getData()
 		sum += patientWaitTimes[i];
 	}
 	sum = sum / patientWaitTimes.size();
-	x = x + std::to_string(sum) + std::string(",") + std::to_string(minutesPerPatient) + "," + std::to_string(Patient::getDeaths());
+	x = x +  std::to_string(minutesPerPatient) + "," + std::to_string(sum) + std::string(",") + std::to_string(Patient::getDeaths());
 	return x;
 }
