@@ -7,12 +7,9 @@
 
 #include "Nurse.h"
 
-
-
 Nurse::Nurse():Caregiver()
 {
 }
-
 
 Nurse::~Nurse()
 {
@@ -20,13 +17,13 @@ Nurse::~Nurse()
 
 void Nurse::addPatient(PatientQueue& p, Record& r)
 {
-	currentPatient = p.nurseTop();
-	if (p.nurseTop().getSeverity() == -1) {
+	currentPatient = p.nurseTop(); //retrives the first patient that a nurse can treat
+	if (p.nurseTop().getSeverity() == -1) { //returns if patient's severity is -1
 		return;
 	}
-	p.nursePop();
+	p.nursePop(); //removes the patient from the queue
 
-	timeRemaining = rand() % 10 + 1;
+	timeRemaining = rand() % 10 + 1; //randomize time remaining from 1-10
 
-	r.addName(currentPatient);
+	r.addName(currentPatient); //adds the patient to the record
 }
