@@ -61,7 +61,6 @@ void PatientQueue::uptickWait(int currentTick)
 		if ((data[i].getSeverity() < 20) && ((currentTick - data[i].getArrivalTime()) % 30 == 0)) {
 			//Every half hour, severity increases by one
 			data[i].iterateSeverity();
-			Patient temp = data[i];
 			reorganize(i);
 		}
 		else if ((data[i].getSeverity() >= 20) && ((currentTick - data[i].getArrivalTime()) % 30 == 0)) {
