@@ -20,13 +20,13 @@ Doctor::~Doctor()
 void Doctor::addPatient(PatientQueue& p, Record& r)
 {
 	
-	currentPatient = p.docTop();
-	if (p.docTop().getSeverity() == -1) {
+	currentPatient = p.docTop(); //retrives the first patient in the queue
+	if (p.docTop().getSeverity() == -1) { //returns if patients severity is -1
 		return;
 	}
-	p.docPop();
+	p.docPop(); //removes the patient from the queue 
 
-	timeRemaining = rand() % 20 + 1;
+	timeRemaining = rand() % 20 + 1; //randomizes time remaining to 1-20
 
-	r.addName(currentPatient);
+	r.addName(currentPatient); //adds the patient name to the record
 }
