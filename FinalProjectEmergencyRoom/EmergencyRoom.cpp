@@ -57,7 +57,9 @@ void EmergencyRoom::simpleRun(unsigned int numTicks)
 		queue.uptickWait(currentTick);
 		
 		//calculates percent done
-		std::cout << ((currentTick % 101==0) ? std::to_string(currentTick * 10 / 1008) + "%\n" : std::string(""));
+		if (currentTick % 101 == 0) {
+			std::cout << currentTick / 101 << "% Patients dead: " << Patient::getDeaths() << std::endl;
+		}
 		if (rand() % minutesPerPatient == 0)
 			queue.push(Patient(currentTick));
 
