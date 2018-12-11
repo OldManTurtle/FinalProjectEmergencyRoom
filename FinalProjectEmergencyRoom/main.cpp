@@ -34,16 +34,28 @@ int main() {
 				EmergencyRoom er(1, 2, i);
 				er.simpleRun(24 * 60 * 7);
 				myfile << er.getData() << ", 1, 2" << std::endl;
+
+				EmergencyRoom era(1, 2, i);
+				era.simpleRun(24 * 60 * 7);
+				myfile << era.getData() << ", 1, 2" << std::endl;
 			}
 			for (int i = 3; i <= 15; i++) {
 				EmergencyRoom er(2, 1, i);
 				er.simpleRun(24 * 60 * 7);
 				myfile << er.getData() << ", 2, 1" << std::endl;
+
+				EmergencyRoom era(2, 1, i);
+				era.simpleRun(24 * 60 * 7);
+				myfile << era.getData() << ", 2, 1" << std::endl;
 			}
 			for (int i = 3; i <= 15; i++) {
 				EmergencyRoom er(1, 1, i);
 				er.simpleRun(24 * 60 * 7);
 				myfile << er.getData() << ", 1, 1" << std::endl;
+
+				EmergencyRoom era(1, 1, i);
+				era.simpleRun(24 * 60 * 7);
+				myfile << era.getData() << ", 1, 1" << std::endl;
 			}
 		myfile.close();
 
